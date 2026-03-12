@@ -45,7 +45,6 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:#050505;
 text-align:center;
 overflow:hidden;
 }
@@ -58,57 +57,48 @@ margin:0;
 
 .tagline{
 color:#c00000;
-margin-top:10px;
 font-size:20px;
 }
 
-/* blood layer */
+/* blood drip container */
 
-.blood{
+.drips{
 position:absolute;
-bottom:0;
+top:100%;
 left:0;
 width:100%;
-height:0;
-background:linear-gradient(#c00000,#420000);
-transition:height 0.15s;
+height:300px;
+pointer-events:none;
 }
 
-/* content */
+.drip{
+fill:#c00000;
+transform-origin:top;
+transform:scaleY(0);
+transition:transform 0.2s;
+}
+
+/* resume content */
 
 .container{
 padding:100px 12%;
 max-width:900px;
 margin:auto;
-position:relative;
 }
 
 .section{
 margin-top:80px;
-position:relative;
 }
 
 .section h2{
-font-size:30px;
 color:#c00000;
-margin-bottom:20px;
+font-size:28px;
 }
 
 .item{
-margin-bottom:25px;
-line-height:1.6;
 color:#ccc;
-}
-
-/* chaotic background numbers */
-
-.chaos{
-position:absolute;
-font-size:120px;
-color:rgba(255,0,0,0.04);
-top:-40px;
-left:-20px;
-pointer-events:none;
+line-height:1.6;
+margin-top:15px;
 }
 
 /* footer */
@@ -138,97 +128,86 @@ color:#666;
 <h1>EBUU</h1>
 <p class="tagline">resume fragments</p>
 
-<div class="blood"></div>
+<svg class="drips" viewBox="0 0 1000 300" preserveAspectRatio="none">
+
+<path class="drip" d="M100 0 C110 60 90 120 100 200 C110 260 90 280 100 300 L120 300 C110 260 130 200 120 120 C110 60 120 0 Z"/>
+
+<path class="drip" d="M300 0 C310 80 290 140 300 220 C310 280 290 290 300 300 L320 300 C310 260 330 200 320 120 C310 60 320 0 Z"/>
+
+<path class="drip" d="M520 0 C530 70 510 130 520 210 C530 270 510 290 520 300 L540 300 C530 260 550 200 540 120 C530 60 540 0 Z"/>
+
+<path class="drip" d="M720 0 C730 70 710 150 720 230 C730 290 710 295 720 300 L740 300 C730 260 750 200 740 120 C730 60 740 0 Z"/>
+
+<path class="drip" d="M900 0 C910 80 890 150 900 230 C910 280 890 295 900 300 L920 300 C910 260 930 200 920 120 C910 60 920 0 Z"/>
+
+</svg>
 
 </header>
 
 <div class="container">
 
 <div class="section">
-<div class="chaos">01</div>
-
 <h2>Profile</h2>
-
 <p class="item">
 Graphic design student exploring dark aesthetics, emotional storytelling,
-and experimental typography. My work exists between elegance and tension —
-where design becomes narrative instead of decoration.
+and experimental typography. My work sits between elegance and tension.
 </p>
-
 </div>
 
 <div class="section">
-<div class="chaos">02</div>
-
 <h2>Education</h2>
-
 <p class="item">
-<strong>Bachelor of Graphic Design</strong><br>
+Bachelor of Graphic Design<br>
 Your University Name
 </p>
-
 </div>
 
 <div class="section">
-<div class="chaos">03</div>
-
 <h2>Skills</h2>
-
 <p class="item">
 Adobe Illustrator<br>
 Adobe Photoshop<br>
 Typography<br>
 Poster Design<br>
-Concept Advertising<br>
-Visual Storytelling
+Concept Advertising
 </p>
-
 </div>
 
 <div class="section">
-<div class="chaos">04</div>
-
 <h2>Selected Projects</h2>
-
 <p class="item">
-Rooh Afzah Advertising Campaign<br>
-Pocket Iftar Campaign Concept<br>
-Typographic CV Experiment<br>
-Poster Series
+Rooh Afzah Campaign<br>
+Pocket Iftar Advertising Concept<br>
+Typographic CV Experiment
 </p>
-
 </div>
 
 <div class="section">
-<div class="chaos">05</div>
-
 <h2>Contact</h2>
-
 <p class="item">
 Email: your@email.com<br>
 Instagram: @yourhandle
 </p>
-
 </div>
 
 </div>
 
 <footer>
-
-<p>Design should leave a mark.</p>
-
+Design should leave a mark.
 </footer>
 
 <script>
 
-/* blood dripping on scroll */
+/* drip animation */
 
 window.addEventListener("scroll", function(){
 
 let scroll = window.scrollY
-let blood = document.querySelector(".blood")
+let scale = Math.min(scroll / 300,1)
 
-blood.style.height = Math.min(scroll * 0.6, 500) + "px"
+document.querySelectorAll(".drip").forEach(function(d){
+d.style.transform = "scaleY(" + scale + ")"
+})
 
 })
 
