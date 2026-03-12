@@ -7,10 +7,10 @@
 <style>
 
 body{
-background:#0a0a0a;
-color:white;
-font-family:Helvetica, Arial;
 margin:0;
+font-family:Helvetica, Arial;
+background:#0b0b0b;
+color:white;
 }
 
 header{
@@ -23,38 +23,73 @@ text-align:center;
 }
 
 h1{
-font-size:70px;
-letter-spacing:4px;
+font-size:80px;
+letter-spacing:6px;
 margin:0;
 }
 
 .tagline{
-color:#c00000;
+color:#d10000;
 font-size:22px;
 margin-top:10px;
 }
 
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:15px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(6px);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:14px;
+letter-spacing:2px;
+}
+
 section{
-padding:80px 10%;
+padding:100px 10%;
+}
+
+.section-title{
+font-size:32px;
+margin-bottom:30px;
+}
+
+.about{
+max-width:700px;
+line-height:1.6;
+color:#ccc;
 }
 
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:30px;
 margin-top:40px;
 }
 
-.card{
-border:1px solid #c00000;
+.project{
+border:1px solid #d10000;
 padding:40px;
-transition:0.3s;
+transition:0.4s;
 cursor:pointer;
 }
 
-.card:hover{
-background:#c00000;
+.project:hover{
+background:#d10000;
 transform:scale(1.05);
+}
+
+.contact{
+text-align:center;
+margin-top:40px;
 }
 
 footer{
@@ -69,6 +104,12 @@ color:#777;
 
 <body>
 
+<nav>
+<a href="#about">ABOUT</a>
+<a href="#work">WORK</a>
+<a href="#contact">CONTACT</a>
+</nav>
+
 <header>
 
 <h1>EBUU</h1>
@@ -76,16 +117,47 @@ color:#777;
 
 </header>
 
-<section>
+<section id="about">
 
-<h2>Selected Work</h2>
+<h2 class="section-title">About</h2>
+
+<p class="about">
+I’m a graphic design student exploring dark aesthetics, emotional storytelling, and bold visual language.
+My work lives somewhere between elegance and chaos — where typography whispers, colors bruise, and ideas refuse to behave.
+</p>
+
+</section>
+
+<section id="work">
+
+<h2 class="section-title">Selected Work</h2>
 
 <div class="projects">
 
-<div class="card">Advertising Campaign</div>
-<div class="card">Typography Experiments</div>
-<div class="card">Poster Series</div>
-<div class="card">Editorial Design</div>
+<div class="project">Advertising Campaign</div>
+
+<div class="project">Typography Experiment</div>
+
+<div class="project">Poster Series</div>
+
+<div class="project">Editorial Design</div>
+
+<div class="project">Concept Branding</div>
+
+<div class="project">Visual Story Project</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="contact">
+
+<p>Email: your@email.com</p>
+<p>Instagram: @yourhandle</p>
 
 </div>
 
@@ -93,7 +165,7 @@ color:#777;
 
 <footer>
 
-<p>beautiful things sometimes grow from broken places</p>
+<p>© 2026 Ebuu — crafted in shadows</p>
 
 </footer>
 
