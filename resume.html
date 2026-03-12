@@ -8,9 +8,10 @@
 
 body{
 margin:0;
-font-family:Helvetica, Arial;
-background:#0b0b0b;
+background:#050505;
+font-family:Arial, Helvetica, sans-serif;
 color:white;
+overflow-x:hidden;
 }
 
 nav{
@@ -20,44 +21,75 @@ width:100%;
 display:flex;
 justify-content:center;
 gap:40px;
-padding:15px;
+padding:18px;
 background:rgba(0,0,0,0.6);
+backdrop-filter:blur(5px);
 }
 
 nav a{
 color:white;
 text-decoration:none;
 letter-spacing:2px;
+font-size:14px;
+}
+
+.hero{
+height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:90px;
+letter-spacing:6px;
+margin:0;
+}
+
+.glitch{
+color:#c00000;
+font-size:22px;
 }
 
 .container{
-padding:120px 10%;
+padding:80px 12%;
 max-width:900px;
 margin:auto;
-}
-
-h1{
-font-size:50px;
-margin-bottom:10px;
+position:relative;
 }
 
 .section{
-margin-top:60px;
+margin-top:80px;
+position:relative;
 }
 
 .section h2{
-color:#d10000;
+font-size:30px;
+color:#c00000;
 margin-bottom:20px;
 }
 
 .item{
-margin-bottom:20px;
+margin-bottom:25px;
+line-height:1.6;
+color:#ccc;
+}
+
+.chaos{
+position:absolute;
+font-size:120px;
+color:rgba(255,0,0,0.04);
+top:-40px;
+left:-20px;
+pointer-events:none;
 }
 
 footer{
 text-align:center;
-padding:40px;
-color:#777;
+padding:60px;
+color:#666;
 }
 
 </style>
@@ -72,67 +104,88 @@ color:#777;
 <a href="resume.html">RESUME</a>
 </nav>
 
+<div class="hero">
+
+<h1>EBUU</h1>
+<p class="glitch">resume — fragments of a designer</p>
+
+</div>
+
 <div class="container">
 
-<h1>Ebuu</h1>
-<p>Graphic Design Student</p>
-
 <div class="section">
+<div class="chaos">01</div>
+
 <h2>Profile</h2>
-<p>
-Creative design student passionate about bold visuals, emotional storytelling,
-and experimental typography. Interested in advertising, branding, and dark
-editorial aesthetics.
+
+<p class="item">
+Graphic design student obsessed with bold visuals, emotional tension,
+and experimental typography. My work explores the space between elegance
+and discomfort — where design becomes narrative.
 </p>
+
 </div>
 
 <div class="section">
+<div class="chaos">02</div>
+
 <h2>Education</h2>
 
-<div class="item">
-<p><strong>Bachelor in Graphic Design</strong></p>
-<p>Your University Name</p>
-</div>
+<p class="item">
+<strong>Bachelor in Graphic Design</strong><br>
+Your University Name
+</p>
 
 </div>
 
 <div class="section">
+<div class="chaos">03</div>
+
 <h2>Skills</h2>
 
-<p>
+<p class="item">
 Adobe Illustrator<br>
 Adobe Photoshop<br>
 Typography<br>
 Poster Design<br>
-Branding Concepts
+Brand Identity<br>
+Concept Advertising
 </p>
 
 </div>
 
 <div class="section">
-<h2>Projects</h2>
+<div class="chaos">04</div>
 
-<p>
-Rooh Afzah Advertising Campaign<br>
-Pocket Iftar Campaign<br>
-Typographic CV Project<br>
+<h2>Selected Projects</h2>
+
+<p class="item">
+Rooh Afzah Campaign<br>
+Pocket Iftar Advertising Concept<br>
+Typographic CV Experiment<br>
 Poster Design Series
 </p>
 
 </div>
 
 <div class="section">
+<div class="chaos">05</div>
+
 <h2>Contact</h2>
 
-<p>Email: your@email.com</p>
-<p>Instagram: @yourhandle</p>
+<p class="item">
+Email: your@email.com<br>
+Instagram: @yourhandle
+</p>
 
 </div>
 
 </div>
 
 <footer>
-<p>© Ebuu Portfolio</p>
+
+<p>Design is not decoration. It is tension.</p>
+
 </footer>
 
 </body>
