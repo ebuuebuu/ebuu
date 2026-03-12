@@ -2,31 +2,19 @@
 <html>
 
 <head>
-<title>Ebuu Resume</title>
-</head>
-
-<body>
-
-<nav>
-<a href="index.html">HOME</a>
-<a href="index.html#about">ABOUT</a>
-<a href="index.html#work">WORK</a>
-<a href="resume.html">RESUME</a>
-<a href="index.html#contact">CONTACT</a>
-</nav>
-
-<head>
 <title>Ebuu | Resume</title>
 
 <style>
 
 body{
 margin:0;
-background:#050505;
 font-family:Arial, Helvetica, sans-serif;
+background:#050505;
 color:white;
 overflow-x:hidden;
 }
+
+/* navigation */
 
 nav{
 position:fixed;
@@ -37,7 +25,8 @@ justify-content:center;
 gap:40px;
 padding:18px;
 background:rgba(0,0,0,0.6);
-backdrop-filter:blur(5px);
+backdrop-filter:blur(6px);
+z-index:10;
 }
 
 nav a{
@@ -47,28 +36,48 @@ letter-spacing:2px;
 font-size:14px;
 }
 
+/* hero */
+
 .hero{
-height:80vh;
+position:relative;
+height:75vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+background:#050505;
 text-align:center;
+overflow:hidden;
 }
 
 .hero h1{
-font-size:90px;
-letter-spacing:6px;
+font-size:100px;
+letter-spacing:8px;
 margin:0;
 }
 
-.glitch{
+.tagline{
 color:#c00000;
-font-size:22px;
+margin-top:10px;
+font-size:20px;
 }
 
+/* blood layer */
+
+.blood{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:0;
+background:linear-gradient(#c00000,#420000);
+transition:height 0.15s;
+}
+
+/* content */
+
 .container{
-padding:80px 12%;
+padding:100px 12%;
 max-width:900px;
 margin:auto;
 position:relative;
@@ -91,6 +100,8 @@ line-height:1.6;
 color:#ccc;
 }
 
+/* chaotic background numbers */
+
 .chaos{
 position:absolute;
 font-size:120px;
@@ -99,6 +110,8 @@ top:-40px;
 left:-20px;
 pointer-events:none;
 }
+
+/* footer */
 
 footer{
 text-align:center;
@@ -114,16 +127,20 @@ color:#666;
 
 <nav>
 <a href="index.html">HOME</a>
+<a href="index.html#about">ABOUT</a>
 <a href="index.html#work">WORK</a>
 <a href="resume.html">RESUME</a>
+<a href="index.html#contact">CONTACT</a>
 </nav>
 
-<div class="hero">
+<header class="hero">
 
 <h1>EBUU</h1>
-<p class="glitch">resume — fragments of a designer</p>
+<p class="tagline">resume fragments</p>
 
-</div>
+<div class="blood"></div>
+
+</header>
 
 <div class="container">
 
@@ -133,9 +150,9 @@ color:#666;
 <h2>Profile</h2>
 
 <p class="item">
-Graphic design student obsessed with bold visuals, emotional tension,
-and experimental typography. My work explores the space between elegance
-and discomfort — where design becomes narrative.
+Graphic design student exploring dark aesthetics, emotional storytelling,
+and experimental typography. My work exists between elegance and tension —
+where design becomes narrative instead of decoration.
 </p>
 
 </div>
@@ -146,7 +163,7 @@ and discomfort — where design becomes narrative.
 <h2>Education</h2>
 
 <p class="item">
-<strong>Bachelor in Graphic Design</strong><br>
+<strong>Bachelor of Graphic Design</strong><br>
 Your University Name
 </p>
 
@@ -162,8 +179,8 @@ Adobe Illustrator<br>
 Adobe Photoshop<br>
 Typography<br>
 Poster Design<br>
-Brand Identity<br>
-Concept Advertising
+Concept Advertising<br>
+Visual Storytelling
 </p>
 
 </div>
@@ -174,10 +191,10 @@ Concept Advertising
 <h2>Selected Projects</h2>
 
 <p class="item">
-Rooh Afzah Campaign<br>
-Pocket Iftar Advertising Concept<br>
+Rooh Afzah Advertising Campaign<br>
+Pocket Iftar Campaign Concept<br>
 Typographic CV Experiment<br>
-Poster Design Series
+Poster Series
 </p>
 
 </div>
@@ -198,9 +215,24 @@ Instagram: @yourhandle
 
 <footer>
 
-<p>Design is not decoration. It is tension.</p>
+<p>Design should leave a mark.</p>
 
 </footer>
+
+<script>
+
+/* blood dripping on scroll */
+
+window.addEventListener("scroll", function(){
+
+let scroll = window.scrollY
+let blood = document.querySelector(".blood")
+
+blood.style.height = Math.min(scroll * 0.6, 500) + "px"
+
+})
+
+</script>
 
 </body>
 
